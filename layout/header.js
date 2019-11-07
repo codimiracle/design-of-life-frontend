@@ -1,6 +1,6 @@
-const Time = () => (
-    <div className="time">{`${new Date()}`}</div>
-);
+const Time = () => {
+    return (<div className="time">{`${new Date()}`}</div>);
+}
 const User = (props) => (
     <div className="user-area">
         <div className="avatar"></div>

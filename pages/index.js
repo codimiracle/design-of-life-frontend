@@ -2,6 +2,7 @@ import AwardPanel from '../components/award-panel';
 import RecentPanel from '../components/recent-panel';
 import LifeDesignPanel from '../components/life-design-panel';
 import DefaultLayout from '../layout/default-layout';
+import '../init';
 
 const awards = [];
 const recents = [];
@@ -34,6 +35,9 @@ const Home = () => (
         <style jsx global>{`
             html, body {
                 margin: 0;
+            }
+            .invalid {
+                color: grey;
             }
             .panel {
                 padding: 12px;
