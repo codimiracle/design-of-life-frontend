@@ -1,9 +1,9 @@
-import Icon from "./icon";
+import Icon from "./ui/icon";
 
 const CategoryItem = (props) => (
     <li className={`category-tab ${props.checked && '--active'}`}>
         <a>{props.category.name}</a>
-        <span className="category-tab-close"><Icon name="close" /></span>
+        <a className="category-tab-close"><Icon name="close" /></a>
         <style jsx>{`
             .category-tab {
                 color: rgba(255,255,255, 0.9);

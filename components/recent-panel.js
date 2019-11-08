@@ -1,4 +1,4 @@
-import Panel from './panel';
+import Panel from './ui/panel';
 
 const RecentItem = (props) => {
 

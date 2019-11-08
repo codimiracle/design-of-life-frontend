@@ -1,7 +1,10 @@
 import CetagoryBar from './category-bar';
-import Panel from './panel';
+import Panel from './ui/panel';
 import LifeDesignDetails from './life-design-details';
 import LifeDesignList from './life-design-list';
+import OptionBar from './ui/option-bar';
+import Checkbox from './ui/checkbox';
+import Button from './ui/button';
 
 const categories = [
     {
@@ -34,6 +37,7 @@ const LifeDesignPanel = (props) => {
             </div>
             <div className="life-design-viewer">
                 <aside>
+                    <OptionBar title={<Checkbox />} operator={<Button />}/>
                     <LifeDesignList lifeDesigns={lifeDesigns} />
                 </aside>
                 <article>
@@ -41,6 +45,9 @@ const LifeDesignPanel = (props) => {
                 </article>
             </div>
             <style jsx>{`
+                aside {
+                    padding-right 12px;
+                }
                 .life-design-category-tabs {
                     border-bottom: 1px solid lightgrey;
                 }

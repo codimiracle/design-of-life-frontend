@@ -1,3 +1,5 @@
+import Checkbox from "./ui/checkbox";
+
 const statusColorMap = {
     'default': 'white',
     // today
@@ -10,7 +12,7 @@ const LifeDesignItem = (props) => {
     return (
         <li>
             <div>
-                {lifeDesign.title}
+                <Checkbox />{lifeDesign.title}
             </div>
             <style jsx>{`
                 .li {

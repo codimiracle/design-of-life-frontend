@@ -2,7 +2,7 @@ import AwardPanel from '../components/award-panel';
 import RecentPanel from '../components/recent-panel';
 import LifeDesignPanel from '../components/life-design-panel';
 import DefaultLayout from '../layout/default-layout';
-import '../init';
+import App from '../components/app';
 
 const awards = [];
 const recents = [];
@@ -48,4 +48,5 @@ const Home = () => (
     </DefaultLayout>
 );
 
-export default Home;
+const WrapperApp = () => <App><Home /></App>;
+export default WrapperApp;

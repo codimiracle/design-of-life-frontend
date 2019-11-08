@@ -1,5 +1,22 @@
-const Time = () => {
-    return (<div className="time">{`${new Date()}`}</div>);
+class Time extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: ''
+        }
+    }
+    tick() {
+        const date = new Date();
+        const time = `${date.getFullYear()} ${date.getMonth()}/${date.getDate()}`;
+        this.setState({time: time});
+    }
+    componentDidMount() {
+        this.timerId = setInterval(() => this.tick(), 1000);
+    }
+    render() {
+        const time = this.state.time;
+        return (<div className="time">{`${time}`}</div>);
+    }
 }
 const User = (props) => (
     <div className="user-area">

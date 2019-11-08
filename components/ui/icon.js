@@ -4,7 +4,11 @@ const iconMap = {
     'add-circle': 'plus-circle',
 };
 const Icon = (props) => {
-    return <FontAwesomeIcon icon={iconMap[props.name] || props.name} />
+    return (
+        <>
+            <FontAwesomeIcon icon={iconMap[props.name] || props.name} />
+        </>
+    );
 }
 
 export default Icon;
