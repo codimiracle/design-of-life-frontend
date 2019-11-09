@@ -6,7 +6,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener('select', function (e) { e.preventDefault(); });
+        document.addEventListener('selectstart', function (e) { e.preventDefault(); });
     }
     render() {
         return <div className="app">{this.props.children}</div>
