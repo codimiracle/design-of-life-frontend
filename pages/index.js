@@ -5,7 +5,16 @@ import DefaultLayout from '../layout/default-layout';
 import App from '../components/app';
 
 const awards = [];
-const recents = [];
+const recents = [
+    {
+        id: 12,
+        userId: 324,
+        statusFrom: '',
+        stausTo: '',
+        operation: '',
+        createdTime: new Date().toISOString()
+    }
+];
 
 const Home = () => (
     <DefaultLayout>

@@ -23,8 +23,8 @@ const User = (props) => (
         <div className="avatar"></div>
         <style jsx>{`
             .user-area {
-                width: 56px;
-                height: 56px;
+                width: 36px;
+                height: 36px;
                 border: 1px solid lightgrey;
                 border-radius: 100%;
             }
@@ -42,8 +42,8 @@ const Header = (props) => (
         <User />
         <style jsx>{`
             header {
-                height: 56px;
-                line-height: 56px;
+                height: 36px;
+                line-height: 36px;
                 padding: 8px;
                 display: flex;
                 justify-content: space-between;
