@@ -16,16 +16,21 @@ const categories = [
         name: "娱乐"
     }
 ];
-const lifeDesigns = [
-    {
-        id: 3234,
-        title: "学习一个专栏",
-        status: 1,
-        content: "### Title",
-        isMarkdown: true,
-        isHtml: false
+function testData() {
+    var arr = new Array();
+    for (var i = 0; i < 100; i++) {
+        arr.push({
+            id: i,
+            title: "学习一个专栏",
+            status: i % 4,
+            content: "### Title",
+            isMarkdown: true,
+            isHtml: false
+        })
     }
-];
+    return arr;
+}
+const lifeDesigns = testData();
 const LifeDesignPanel = (props) => {
     const onCategorySelected = () => {
 
@@ -37,8 +42,12 @@ const LifeDesignPanel = (props) => {
             </div>
             <div className="life-design-viewer">
                 <aside>
-                    <OptionBar title={<Checkbox />} operator={<Button />}/>
-                    <LifeDesignList lifeDesigns={lifeDesigns} />
+                    <section className="option-bar-wrapper">
+                        <OptionBar title={<Checkbox />} operator={<Button icon="bars" />}/>
+                    </section>
+                    <section className="life-design-list-wrapper">
+                        <LifeDesignList className="life-design-list" lifeDesigns={lifeDesigns} />
+                    </section>
                 </aside>
                 <article>
                     <LifeDesignDetails lifeDesign={lifeDesigns[0]} />
@@ -46,7 +55,14 @@ const LifeDesignPanel = (props) => {
             </div>
             <style jsx>{`
                 aside {
-                    padding-right 12px;
+                    padding-top: 3px;
+                }
+                .option-bar-wrapper {
+                    padding: 0 6px; 
+                }
+                .life-design-list-wrapper {
+                    padding-top: 6px;
+                    padding-right: 4px;
                 }
                 .life-design-category-tabs {
                     border-bottom: 1px solid lightgrey;
