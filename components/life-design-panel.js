@@ -1,10 +1,8 @@
 import CetagoryBar from './category-bar';
 import Panel from './ui/panel';
 import LifeDesignDetails from './life-design-details';
-import LifeDesignList from './life-design-list';
-import OptionBar from './ui/option-bar';
-import Checkbox from './ui/checkbox';
-import Button from './ui/button';
+import List from './ui/list';
+import LifeDesignItem from './life-design-item';
 
 const categories = [
     {
@@ -31,6 +29,21 @@ function testData() {
     return arr;
 }
 const lifeDesigns = testData();
+
+const listSettings = {
+    options: {},
+    metadata: {
+        id: {
+            type: ['item.key', 'item.value'],
+        },
+        title: {
+            type: ['item.name'],
+            render: (item) => (
+                <LifeDesignItem lifeDesign={item} />
+            )
+        }
+    }
+}
 const LifeDesignPanel = (props) => {
     const onCategorySelected = () => {
 
@@ -42,12 +55,8 @@ const LifeDesignPanel = (props) => {
             </div>
             <div className="life-design-viewer">
                 <aside>
-                    <section className="option-bar-wrapper">
-                        <OptionBar title={<Checkbox />} operator={<Button icon="bars" />}/>
-                    </section>
-                    <section className="life-design-list-wrapper">
-                        <LifeDesignList className="life-design-list" lifeDesigns={lifeDesigns} />
-                    </section>
+                    <List items={lifeDesigns} settings={listSettings} />
+                    {/* <LifeDesignList className="life-design-list" lifeDesigns={lifeDesigns} /> */}
                 </aside>
                 <article>
                     <LifeDesignDetails lifeDesign={lifeDesigns[0]} />
