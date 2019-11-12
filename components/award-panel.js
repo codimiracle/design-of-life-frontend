@@ -1,15 +1,11 @@
 import Panel from './ui/panel';
-import Icon from './ui/icon';
 import Button from './ui/button';
 
 const AwardItem = (props) => (
     <li>
-        <div className="award-name">{props.award.name}</div>
-        <div className="award-value">{props.award.value} pt</div>
+        <div className="award-name"><abbr title={props.award.description}>{props.award.name}</abbr></div>
+        <div className="award-value">{props.award.value}</div>
         <style jsx>{`
-            li {
-                padding: 0 4px;
-            }
             .award-name {
                 position: relative;
             }
@@ -23,11 +19,15 @@ const AwardItem = (props) => (
                 
                 display: block;
                 position: absolute;
-                left: -24px;
+                left: -16px;
                 top: 6px;
             }
             .award-value {
                 font-family: 'Arial';
+            }
+            .award-value::after {
+                content: 'pt';
+                margin-left: 4px;
             }
         `}</style>
     </li>
@@ -43,9 +43,9 @@ const AwardPanel = (props) => (
             .noitems {
                 padding: 4px 0;
             }
-            .awards.panel > ul {
+             ul {
                 list-style-type: none;
-                padding-left: 32px;
+                padding-left: 20px;
                 margin: 0;
             }
             .add-award {
