@@ -1,7 +1,5 @@
 import Header from './header';
 import Footer from './footer';
-import AwardPanel from '../components/award-panel';
-import RecentPanel from '../components/recent-panel';
 
 const DefaultLayout = (props) => (
     <div className="default layout">
