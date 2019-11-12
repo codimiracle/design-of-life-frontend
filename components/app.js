@@ -9,6 +9,10 @@ export default class App extends React.Component {
         document.addEventListener('selectstart', function (e) { e.preventDefault(); });
     }
     render() {
-        return <div className="app">{this.props.children}</div>
+        return (
+            <div className="app">
+                {this.props.children}
+            </div>
+        );
     }
 }
