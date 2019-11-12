@@ -1,15 +1,27 @@
 import Icon from "./icon";
 
-const Button = (props) => (
-    <>
-        <button onClick={props.onClick}>{props.icon && <Icon name={props.icon}/>} {props.children}</button>
-        <style jsx>{`
-            button {
-                background: white;
-                border: none;
-            }
-        `}</style>
-    </>
-);
+class Button extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const {onClick, icon, children, menu, onMenuClick} = this.props;
+        return (<>
+            <button onClick={onClick}>
+                {icon && <Icon name={icon} />} {children}
+                {menu && <ul>
+                    {}
+                </ul>}
+            </button>
+            <style jsx>{`
+                button {
+                    background: white;
+                    border: none;
+                }
+            `}</style>
+        </>);
+    }
+}
 
 export default Button;

@@ -30,7 +30,7 @@ class Checkbox extends React.Component {
                         position: relative;
                     }
                     .checkbox-component {
-                        height: 18px;
+                        height: 22px;
                         overflow: hidden;
                         display: inline;
                         position: relative;
