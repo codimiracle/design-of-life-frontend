@@ -21,4 +21,4 @@ This is a self-manager software, its goals is make you stand doing something pro
 ## Contribute it
    welcome to contribute on it, let's make it well done.
 ## Contact
-[Email me](codimiracle@outlook.com)
+[Email me](mailto:codimiracle@outlook.com)
