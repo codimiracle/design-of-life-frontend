@@ -16,7 +16,7 @@ class Button extends React.Component {
             </button>
             <style jsx>{`
                 button {
-                    background: white;
+                    background: rgba(255,255,255,0);
                     border: none;
                 }
             `}</style>
