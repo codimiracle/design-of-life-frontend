@@ -1,5 +1,6 @@
 import Header from './header';
 import Footer from './footer';
+import { GlobalStyle } from '../theme/style';
 
 const DefaultLayout = (props) => (
     <div className="default layout">
@@ -12,6 +13,7 @@ const DefaultLayout = (props) => (
                 padding: 16px 12px;
             }
         `}</style>
+        <GlobalStyle />
     </div>
 );
 
