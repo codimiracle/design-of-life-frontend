@@ -1,6 +1,7 @@
-import OptionBar from "./option-bar";
-import Checkbox from "./checkbox";
-import Button from "./button";
+import OptionBar from './option-bar';
+import Checkbox from './checkbox';
+import { IconButton } from './button';
+
 function getDescriptor(items, settings) {
     const metadata = (settings || {}).metadata || {};
     const descriptor = {
@@ -85,19 +86,30 @@ class List extends React.Component {
     render() {
         const descriptor = this.descriptor;
         const selectAll = <Checkbox />;
-        const menu = <Button icon="bars" />
+        const menu = <IconButton icon="bars" />
         return (
             <div className="list-component">
                 <select multiple onChange={(e) => { this.setState({ selectedKey: e.target.value }) }}>
                     {descriptor.describes.map(describe => this.renderOption(describe))}
                 </select>
                 <OptionBar title={selectAll} operator={menu} />
-                <ul>
-                    {descriptor.describes.map(describe => this.renderItem(describe))}
-                </ul>
+                <div className="list-content">
+                    <ul>
+                        {descriptor.describes.map(describe => this.renderItem(describe))}
+                    </ul>
+                    <div className="scrollbar"><div className="thumb"></div></div>
+                </div>
+
                 <style jsx>{`
                     .list-component {
+                        height: 100%;
                         position: relative;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .list-content {
+                        overflow-y: scroll;
+                        height: 100%;
                     }
                     .list-component:focus-within {
                         outline: 1px solid deepskyblue;
@@ -117,4 +129,5 @@ class List extends React.Component {
         );
     }
 }
+
 export default List;
