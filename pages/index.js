@@ -1,12 +1,11 @@
 import AwardPanel from '../components/award-panel';
 import RecentPanel from '../components/recent-panel';
 import LifeDesignPanel from '../components/life-design-panel';
-import DefaultLayout from '../layout/default-layout';
-import App from '../components/app';
+import ResponsiveLayout from '../layout/responsive-layout';
 
 const awards = [
     {
-        id:324,
+        id: 324,
         userId: 234,
         value: 10323,
         name: 'LP',
@@ -41,47 +40,13 @@ const recents = [
     }
 ];
 
-const Home = () => (
-    <DefaultLayout>
-        <aside className="aside-bar">
-            <section className="award-area">
-                <AwardPanel awards={awards} />
-            </section>
-            <section className="recent-area">
-                <RecentPanel recents={recents} />
-            </section>
-        </aside>
-        <article className="main">
-            <LifeDesignPanel />
-        </article>
-        <style jsx>{`
-            .aside-bar {
-                width: 348px;
-            }
-            section + section {
-                margin-top: 16px;
-            }
-            .main {
-                margin-left: 32px;
-                flex: 1;
-            }
-        `}</style>
-        <style jsx global>{`
-            html, body {
-                margin: 0;
-            }
-            .invalid {
-                color: grey;
-            }
-            .panel {
-                background-color: white;
-                padding: 12px;
-                border-radius: 12px;
-                box-shadow: 0 0 20px 2px lightgrey;
-            }
-        `}</style>
-    </DefaultLayout>
+const Index = () => (
+    <ResponsiveLayout functionals={{
+        AwardPanel: <AwardPanel awards={awards} />,
+        RecentPanel: <RecentPanel recents={recents} />,
+        LifeDesignPanel: <LifeDesignPanel />
+    }}>
+    </ResponsiveLayout>
 );
 
-const WrapperApp = () => <App><Home /></App>;
-export default WrapperApp;
+export default Index;
