@@ -1,6 +1,6 @@
 import Header from './header';
 import Footer from './footer';
-import { GlobalStyle } from '../theme/style';
+import { GlobalStyle } from '../theme';
 
 const DefaultLayout = (props) => (
     <div className="default layout">
@@ -9,6 +9,11 @@ const DefaultLayout = (props) => (
         <Footer />
         <style jsx>{`
             .content {
+                position: absolute;
+                top: 64px;
+                bottom: 0;
+                left: 0;
+                right: 0;
                 display: flex;
                 padding: 16px 12px;
             }

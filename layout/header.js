@@ -29,7 +29,7 @@ const Header = (props) => (
                 line-height: 48px;
             }
             header {
-                height: 48px;
+                height: 64px;
                 padding: 8px;
                 display: flex;
                 justify-content: space-between;
