@@ -31,6 +31,7 @@ const RecentItem = (props) => {
                     border-radius: 16px;
                     margin: 6px;
                     position: relative;
+                    z-index: 1;
                     top: 8px;
                 }
                 .time-line .line {
@@ -39,7 +40,6 @@ const RecentItem = (props) => {
                     border-left: 2px solid lightgrey;
                     margin: 0 auto;
                     position: relative;
-                    z-index: -1;
                 }
                 li:first-child .dot {
                     animation: 1s linear 0s infinite alternate blinking;
@@ -57,7 +57,7 @@ const RecentItem = (props) => {
                 }
                 
                 li:last-child .time-line .line {
-                    top: -48px;
+                    top: -56px;
                 }
             `}</style>
         </li>

@@ -1,5 +1,5 @@
 import Panel from './ui/panel';
-import Button from './ui/button';
+import {IconButton} from './ui/button';
 
 const AwardItem = (props) => (
     <li>
@@ -38,7 +38,7 @@ const AwardPanel = (props) => (
             {
                 props.awards && props.awards.length > 0 ? <ul>{props.awards.map((award => <AwardItem key={award.id} award={award} />))}</ul> : <div className="invalid noitems">无奖励项</div>
             }
-            <Button className="add-award" icon="add-circle"><span>添加奖励项</span></Button>
+            <IconButton icon="add-circle">添加奖励项</IconButton>
             <style jsx>{`
             .noitems {
                 padding: 4px 0;

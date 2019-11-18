@@ -40,13 +40,13 @@ class TimeToDo extends React.Component {
                     .wrapper {
                         display: none;
                         padding: 16px;
-                        background-image: '/static/blur.png';
+                        background-color: rgba(0,0,0,0.5);
                         position: absolute;
+                        z-index: 2;
                         top: 64px;
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        z-index: 1;
                     }
                     .seconds {
                         display: none;
@@ -60,16 +60,15 @@ class TimeToDo extends React.Component {
                         font-size: smaller;
                     }
                     .clock {
-                        padding: 7px 0;
                         text-align: center;
-                        background-color: white;
                         position: relative;
-                        z-index: 2;
+                        z-index: 3;
                     }
                     .time-to-do:hover .clock {
                         width: 96px;
                         height: 96px;
-                        padding: 16px 0px;
+                        background-color: white;
+                        padding: 12px 0px;
                         border-radius: 50%;
                         box-sizing: border-box;
                         box-shadow: 0 0 4px 4px lightgrey;

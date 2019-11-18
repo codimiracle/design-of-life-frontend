@@ -3,6 +3,7 @@ import Panel from './ui/panel';
 import LifeDesignDetails from './life-design-details';
 import List from './ui/list';
 import LifeDesignItem from './life-design-item';
+import SearchBar from './search-bar';
 
 const categories = [
     {
@@ -39,7 +40,7 @@ const listSettings = {
         title: {
             type: ['item.name'],
             render: (item) => (
-                <LifeDesignItem lifeDesign={item} />
+                <LifeDesignItem key={item.id} lifeDesign={item} />
             )
         }
     }
@@ -49,22 +50,30 @@ const LifeDesignPanel = (props) => {
 
     };
     return (
-        <Panel>
-            <div className="life-design-category-tabs">
-                <CetagoryBar categories={categories} onCategorySelected={onCategorySelected} />
-            </div>
-            <div className="life-design-viewer">
-                <aside>
-                    <List items={lifeDesigns} settings={listSettings} />
-                    {/* <LifeDesignList className="life-design-list" lifeDesigns={lifeDesigns} /> */}
-                </aside>
-                <article>
-                    <LifeDesignDetails lifeDesign={lifeDesigns[0]} />
-                </article>
+        <Panel style={{ height: '100%', overflow: 'hidden' }}>
+            <div className="content-wrapper">
+                <div className="life-design-category-tabs">
+                    <div>
+                        <CetagoryBar categories={categories} onCategorySelected={onCategorySelected} />
+                    </div>
+                    <SearchBar onSearch={() => { }} />
+                </div>
+                <div className="life-design-viewer">
+                    <aside>
+                        <List items={lifeDesigns} settings={listSettings} />
+                        {/* <LifeDesignList className="life-design-list" lifeDesigns={lifeDesigns} /> */}
+                    </aside>
+                    <article>
+                        <LifeDesignDetails lifeDesign={lifeDesigns[0]} />
+                    </article>
+                </div>
             </div>
             <style jsx>{`
-                aside {
-                    padding-top: 3px;
+                .content-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    overflow: hidden;
                 }
                 .option-bar-wrapper {
                     padding: 0 6px; 
@@ -74,10 +83,16 @@ const LifeDesignPanel = (props) => {
                     padding-right: 4px;
                 }
                 .life-design-category-tabs {
+                    padding-bottom: 12px;
+                    display: flex;
                     border-bottom: 1px solid lightgrey;
+                }
+                .life-design-category-tabs div:first-child {
+                    flex: 1;
                 }
                 .life-design-viewer {
                     display: flex;
+                    height: 100%;
                 }
                 .life-design-viewer aside {
                     width: 256px;
