@@ -3,7 +3,14 @@ const ButtonStyle = {
     foreColor: 'white',
     mouseClickColor: 'dodgerblue',
     mouseMoveInColor: 'skyblue',
-    shadowColor: 'lightgrey'
+    shadowColor: 'lightgrey',
+}
+const DockStyle = {
+    foreColor: 'white',
+    backColor: 'grey',
+    inputMouseMoveInForeColor: 'black',
+    mouseMoveInColor: 'darkgrey',
+    mouseClickColor: 'lightgrey'
 }
 const FontStyle = {
     focusColor: 'deepskyblue'
@@ -20,6 +27,7 @@ const UiStateStyle = {
 
 module.exports = {
     ButtonStyle,
+    DockStyle,
     PanelStyle,
     FontStyle,
     UiStateStyle
