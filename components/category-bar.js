@@ -1,42 +1,19 @@
 import Icon from "./ui/icon";
+import { DockButton, DockIconButton } from "./ui/button";
 
-const CategoryItem = (props) => (
-    <li className={`category-tab ${props.checked && '--active'}`}>
-        <a>{props.category.name}</a>
-        <a className="category-tab-close"><Icon name="close" /></a>
-        <style jsx>{`
-            .category-tab {
-                color: rgba(255,255,255, 0.9);
-                background-color: grey;
-                padding: 4px 12px;
-                border-radius: 16px;
-                margin: 8px;
-                cursor: default;
-            }
-            .category-tab + .category-tab {
-                margin-left: 0;
-            }
-            .category-tab.--active {
-                background-color: lightgrey;
-            }
-            .category-tab:not(.--active):hover {
-                background-color: #b8b8b8;
-            }
-            .category-tab-close {
-                margin-left: 16px;
-            }
-            .category-tab-close:hover {
-                color: lightgrey;
-            }
-        `}</style>
-    </li>
-);
 const CategoryBar = (props) => (
     <div className="category-bar">
         {
             props.categories && props.categories.length > 0 &&
             <ul className="category-tabs">
-                {props.categories.map(category => <CategoryItem key={category.id} category={category} />)}
+                {
+                    props.categories.map(category => <li key={category.id}>
+                    <DockButton>{category.name}</DockButton>
+                    </li>)
+                }
+                <li className="category-tab add-button">
+                    <DockIconButton icon="close" />
+                </li>
             </ul>
         }
         <Icon name="fa times" />
@@ -47,8 +24,8 @@ const CategoryBar = (props) => (
                 padding: 0;
                 display: flex;
             }
-            .category-bar {
-                display: flex;
+            li + li {
+                margin-left: 4px;
             }
         `}</style>
     </div>

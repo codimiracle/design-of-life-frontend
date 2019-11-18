@@ -1,5 +1,3 @@
-import {faCheck} from '@fortawesome/free-solid-svg-icons';
-import Icon from './icon';
 class Checkbox extends React.Component {
     constructor(props) {
         super(props);

@@ -6,12 +6,13 @@ class TimeLine extends React.Component {
     render() {
         const render = this.props.render;
         const points = this.props.points;
+        const keyProperty = this.props.keyProperty;
         return (
             <div className="time-line-component">
                 <ul>
                     {
                         points.map((element) =>
-                            <li>
+                            <li key={element[keyProperty]}>
                                 <div className="time-line">
                                     <div className="dot"></div>
                                     <div className="line"></div>
