@@ -5,16 +5,6 @@ import List from './ui/list';
 import LifeDesignItem from './life-design-item';
 import SearchBar from './search-bar';
 
-const categories = [
-    {
-        id: 1,
-        name: "学习"
-    },
-    {
-        id: 2,
-        name: "娱乐"
-    }
-];
 function testData() {
     var arr = new Array();
     for (var i = 0; i < 100; i++) {
@@ -46,6 +36,7 @@ const listSettings = {
     }
 }
 const LifeDesignPanel = (props) => {
+    const {categories} = props;
     const onCategorySelected = () => {
 
     };

@@ -2,6 +2,7 @@ import Panel from './ui/panel';
 import Moment from 'moment';
 
 const RecentItem = (props) => {
+    const {created_at: createdAt, description } = props.recent;
     return (
         <li>
             <div className="time-line">
@@ -9,8 +10,8 @@ const RecentItem = (props) => {
                 <div className="line"></div>
             </div>
             <div>
-                <div className="recent-time">{Moment(props.recent).fromNow()}</div>
-                <div className="recent-desc">You finish...</div>
+                <div className="recent-time">{Moment(createdAt).fromNow()}</div>
+                <div className="recent-desc">{description}</div>
             </div>
             <style jsx>{`
                 li {
@@ -57,7 +58,7 @@ const RecentItem = (props) => {
                 }
                 
                 li:last-child .time-line .line {
-                    top: -56px;
+                    top: -100%;
                 }
             `}</style>
         </li>

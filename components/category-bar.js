@@ -4,7 +4,7 @@ import { DockButton, DockIconButton } from "./ui/button";
 const CategoryBar = (props) => (
     <div className="category-bar">
         {
-            props.categories && props.categories.length > 0 &&
+            props.categories &&
             <ul className="category-tabs">
                 {
                     props.categories.map(category => <li key={category.id}>
@@ -12,7 +12,7 @@ const CategoryBar = (props) => (
                     </li>)
                 }
                 <li className="category-tab add-button">
-                    <DockIconButton icon="close" />
+                    <DockIconButton icon="add" />
                 </li>
             </ul>
         }
