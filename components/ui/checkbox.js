@@ -20,7 +20,7 @@ class Checkbox extends React.Component {
                         opacity: 0;
                         position: absolute;
                         left: -2px;
-                        top: 3px;
+                        top: 1px;
                         z-index: 1;
                     }
                     label {
@@ -29,7 +29,6 @@ class Checkbox extends React.Component {
                     }
                     .checkbox-component {
                         height: 22px;
-                        overflow: hidden;
                         display: inline;
                         position: relative;
                     }
@@ -43,7 +42,6 @@ class Checkbox extends React.Component {
                         border: 2px solid grey;
                         border-radius: 2px;
                         position: relative;
-                        top: 2px;
                     }
                     .checkbox-component:focus-within::before {
                         border-color: deepskyblue;
@@ -53,7 +51,7 @@ class Checkbox extends React.Component {
                         color: grey;
                         position: absolute;
                         left: 2px;
-                        top: 6px;
+                        top: 8px;
                     }
                     .checkbox-component.--checked .check-icon {
                         visibility: visible;
